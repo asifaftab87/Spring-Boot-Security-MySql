@@ -29,7 +29,7 @@
 		 		
 		    </form:form>
 		</div>
-		--%>
+		
 	<div id="wrap">	
 	  <div class="sidenav">
          <div class="login-main-text">
@@ -55,7 +55,41 @@
                   <button type="submit" class="btn btn-black"><spring:message code="login" /></button>
                   <button type="button" class="btn btn-secondary"><spring:message code="register" /></button>
                </form:form>
+              
+               <form action="login" method="post">
+                  <input name="username" />
+                  <input name="password" />
+                  <button type="submit" class="btn btn-black"><spring:message code="login" /></button>
+                  <button type="button" class="btn btn-secondary"><spring:message code="register" /></button>
+                  
+                  
+               </form>
             </div>
          </div>
       </div>
  </div>
+ 
+  --%>
+ <div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="/static/images/user.png" class="user-custon-icon" alt="User Icon" />
+    </div>
+
+    <!-- Login Form -->
+    <form action="login" method="post">
+      <input type="text" id="username" class="fadeIn second" name="username" placeholder="User Name">
+      <input type="text" id="password" class="fadeIn third" name="password" placeholder="Password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+
+  </div>
+</div>

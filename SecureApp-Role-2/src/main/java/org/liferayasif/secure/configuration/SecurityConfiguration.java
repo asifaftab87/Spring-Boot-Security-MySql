@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
@@ -34,7 +35,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.antMatchers("/registration").permitAll()
 		.and()
 			.csrf().disable()
-			.formLogin().loginPage("/login");
+			.formLogin().loginPage("/login")
+			.failureUrl("/login?error=true")
+            .defaultSuccessUrl("/welcome")
+         .and()
+         	.logout().invalidateHttpSession(true)
+         	.clearAuthentication(true)
+         	.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+            .logoutSuccessUrl("/");
 	}
 	
 	@Bean

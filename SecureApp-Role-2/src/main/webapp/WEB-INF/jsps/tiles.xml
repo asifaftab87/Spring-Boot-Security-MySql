@@ -18,7 +18,7 @@
 	</definition>
 
 	<definition name="welcome" extends="mainLayout">
-		<put-attribute name="body" value="/WEB-INF/jsps/welcome.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsps/common/welcome.jsp" />
 	</definition>
 	
 	<definition name="login" extends="loginLayout">

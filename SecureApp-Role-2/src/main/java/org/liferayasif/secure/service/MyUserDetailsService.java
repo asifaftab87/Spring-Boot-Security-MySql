@@ -28,10 +28,10 @@ public class MyUserDetailsService implements UserDetailsService{
 	private RoleRepository roleRepository;
 	
 	@Override
-	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-		Optional<User> user = userRepository.findByUserName(userName);
-		
-		user.orElseThrow(() -> new UsernameNotFoundException("Not found: "+userName));
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		//Optional<User> user = userRepository.findByUserName(username);
+		Optional<User> user = userRepository.findByEmail(username);
+		user.orElseThrow(() -> new UsernameNotFoundException("Not found: "+username));
 		return user.map(MyUserDetails::new).get();
 	}
 	
@@ -42,4 +42,9 @@ public class MyUserDetailsService implements UserDetailsService{
         return userRepository.save(user);
     }
 
+	
+	/*
+	 * public static void main(String[] args) { System.out.println(new
+	 * BCryptPasswordEncoder().encode("pass")); }
+	 */
 }
