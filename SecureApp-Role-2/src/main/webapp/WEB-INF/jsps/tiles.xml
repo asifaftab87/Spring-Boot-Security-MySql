@@ -22,11 +22,11 @@
 	</definition>
 	
 	<definition name="login" extends="loginLayout">
-		<put-attribute name="body" value="/WEB-INF/jsps/layout/login/login.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsps/login/login.jsp" />
 	</definition>
 	
 	<definition name="registration" extends="loginLayout">
-		<put-attribute name="body" value="/WEB-INF/jsps/layout/login/registration.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsps/login/registration.jsp" />
 	</definition>
 
 </tiles-definitions>
