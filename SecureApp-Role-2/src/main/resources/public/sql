@@ -8,3 +8,6 @@ INSERT INTO `school_management`.`page` (`page_code`, `page_id`, `page_name`, `pa
 INSERT INTO `school_management`.`page` (`page_code`, `page_id`, `page_name`, `parent_id`, `url`) VALUES ('FACL_ADD', '8', 'Add Faculty', '2', '/faculty/add');
 INSERT INTO `school_management`.`page` (`page_code`, `page_id`, `page_name`, `parent_id`, `url`) VALUES ('FACL_EDIT', '9', 'Edit Faculty', '2', '/faculty/edit');
 INSERT INTO `school_management`.`page` (`page_code`, `page_id`, `page_name`, `parent_id`, `url`) VALUES ('FACL_DETAILS', '10', 'Faculty Details', '2', '/faculty/details');
+
+INSERT INTO `school_management`.`user` (`active`, `password`, `user_name`, `email`) VALUES ('3', '$2a$10$n5FHPeUdi9dK67qhiWy2luWaGc.f8VDXN/hd9Ozs.MK358vQn3Blu', 'test', 'test@liferay.com');
+INSERT INTO `school_management`.`user_role` (`user_id`, `role_id`) VALUES ('3', '1');

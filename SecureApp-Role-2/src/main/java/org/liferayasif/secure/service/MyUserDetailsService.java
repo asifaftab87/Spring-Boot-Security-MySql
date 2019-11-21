@@ -42,8 +42,10 @@ public class MyUserDetailsService implements UserDetailsService{
         return userRepository.save(user);
     }
 	
+	
 	/*
 	 * public static void main(String[] args) { System.out.println(new
-	 * BCryptPasswordEncoder().encode("pass")); }
+	 * BCryptPasswordEncoder().encode("test")); }
 	 */
+	 
 }
