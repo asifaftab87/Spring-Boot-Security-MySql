@@ -1,0 +1,10 @@
+INSERT INTO `school_management`.`page` (`page_code`, `page_id`, `page_name`, `parent_id`, `url`) VALUES ('SCH_ADMIN', '1', 'Admin', '0', '/admin');
+INSERT INTO `school_management`.`page` (`page_code`, `page_id`, `page_name`, `parent_id`, `url`) VALUES ('SCH_FACULTY', '2', 'Faculty', '0', '/faculty');
+INSERT INTO `school_management`.`page` (`page_code`, `page_id`, `page_name`, `parent_id`, `url`) VALUES ('SCH_STUDENT', '3', 'Student', '0', '/student');
+INSERT INTO `school_management`.`page` (`page_code`, `page_id`, `page_name`, `parent_id`, `url`) VALUES ('SCH_EVENT', '4', 'Events', '0', '/event');
+INSERT INTO `school_management`.`page` (`page_code`, `page_id`, `page_name`, `parent_id`, `url`) VALUES ('STD_ADD', '5', 'Add Students', '3', '/student/add');
+INSERT INTO `school_management`.`page` (`page_code`, `page_id`, `page_name`, `parent_id`, `url`) VALUES ('STD_DETAILS', '6', 'Students Details', '3', '/student/details');
+INSERT INTO `school_management`.`page` (`page_code`, `page_id`, `page_name`, `parent_id`, `url`) VALUES ('STD_EDIT', '7', 'Edit Students', '3', '/student/edit');
+INSERT INTO `school_management`.`page` (`page_code`, `page_id`, `page_name`, `parent_id`, `url`) VALUES ('FACL_ADD', '8', 'Add Faculty', '2', '/faculty/add');
+INSERT INTO `school_management`.`page` (`page_code`, `page_id`, `page_name`, `parent_id`, `url`) VALUES ('FACL_EDIT', '9', 'Edit Faculty', '2', '/faculty/edit');
+INSERT INTO `school_management`.`page` (`page_code`, `page_id`, `page_name`, `parent_id`, `url`) VALUES ('FACL_DETAILS', '10', 'Faculty Details', '2', '/faculty/details');

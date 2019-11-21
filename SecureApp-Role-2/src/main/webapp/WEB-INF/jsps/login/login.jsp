@@ -81,8 +81,8 @@
 
     <!-- Login Form -->
     <form action="login" method="post">
-      <input type="text" id="username" class="fadeIn second" name="username" placeholder="User Name">
-      <input type="text" id="password" class="fadeIn third" name="password" placeholder="Password">
+      <input type="text" id="username" class="fadeIn second" name="username" placeholder="Email">
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password">
       <input type="submit" class="fadeIn fourth" value="Log In">
     </form>
 

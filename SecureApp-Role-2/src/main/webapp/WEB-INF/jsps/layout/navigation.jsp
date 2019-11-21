@@ -1,7 +1,7 @@
-<%@page import="java.util.ArrayList"%>
-<%@page import="org.school.service.StaticService"%>
-<%@page import="org.school.model.Page"%>
-<%@page import="java.util.List"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="org.liferayasif.secure.service.StaticService"%>
+<%@ page import="org.liferayasif.secure.model.Page"%>
+<%@ page import="java.util.List"%>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
   <a class="navbar-brand text-white" href="#">Home</a>

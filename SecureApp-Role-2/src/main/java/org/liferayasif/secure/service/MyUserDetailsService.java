@@ -41,7 +41,6 @@ public class MyUserDetailsService implements UserDetailsService{
         user.setRoles(role);
         return userRepository.save(user);
     }
-
 	
 	/*
 	 * public static void main(String[] args) { System.out.println(new
