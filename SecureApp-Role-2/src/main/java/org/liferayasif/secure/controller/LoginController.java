@@ -1,19 +1,29 @@
 package org.liferayasif.secure.controller;
 
+import java.util.Arrays;
+import java.util.HashSet;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.liferayasif.secure.model.Role;
 import org.liferayasif.secure.model.User;
+import org.liferayasif.secure.service.MyUserDetailsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class LoginController {
 
+	@Autowired
+	private MyUserDetailsService userService;
+	
 	@GetMapping(value = {"/", "/login"})
 	public ModelAndView login(@ModelAttribute User user, HttpServletRequest req, HttpServletResponse res) {
 		
@@ -34,6 +44,20 @@ public class LoginController {
         User user = new User();
         mav.addObject("user", user);
         
+        return mav;
+        
+	}
+	
+	@PostMapping(value = "/registration")
+	public ModelAndView registerPost(@ModelAttribute User user, HttpServletRequest req, HttpServletResponse res) {
+		
+		ModelAndView mav = new ModelAndView("registration");
+		
+		Role role = new Role();
+		role.setRole("ROLE_USER");
+		//user.setRoles(new HashSet<>(Arrays.asList(role)));
+        mav.addObject("user", user);
+        userService.saveUser(user, new HashSet<>(Arrays.asList(role)));
         return mav;
         
 	}

@@ -2,7 +2,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
-
+<link rel="stylesheet" type="text/css" href="/static/css/login.css" />
  <div class="wrapper fadeInDown">
   <div id="formContent">
     <!-- Tabs Titles -->
