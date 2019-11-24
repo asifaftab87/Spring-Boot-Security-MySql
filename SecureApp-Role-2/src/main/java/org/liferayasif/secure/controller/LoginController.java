@@ -1,8 +1,5 @@
 package org.liferayasif.secure.controller;
 
-import java.util.Arrays;
-import java.util.HashSet;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -28,12 +25,8 @@ public class LoginController {
 	public ModelAndView login(@ModelAttribute User user, HttpServletRequest req, HttpServletResponse res) {
 		
 		ModelAndView mav = new ModelAndView("login");
-		
-        //User user = new User();
         mav.addObject("user", user);
-        
         return mav;
-        
 	}
 	
 	@GetMapping(value = "/registration")
@@ -43,9 +36,7 @@ public class LoginController {
 		
         User user = new User();
         mav.addObject("user", user);
-        
         return mav;
-        
 	}
 	
 	@PostMapping(value = "/registration")
@@ -55,17 +46,14 @@ public class LoginController {
 		
 		Role role = new Role();
 		role.setRole("ROLE_USER");
-		//user.setRoles(new HashSet<>(Arrays.asList(role)));
         mav.addObject("user", user);
-        userService.saveUser(user, new HashSet<>(Arrays.asList(role)));
+        userService.saveUser(user, "ROLE_USER");
         return mav;
-        
 	}
 	
 	@GetMapping(value = "/welcome")
 	public ModelAndView welcome(@ModelAttribute User user, HttpServletRequest req, HttpServletResponse res) {
 		
-
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		String username;
 		

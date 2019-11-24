@@ -39,7 +39,7 @@
 			</div>
 			<spring:message code="register" var="register"/>
 			<input type="submit" value="${register}" />
-			
+			<a class="text-primary" href="/">Login</a>
 		</form:form>
 	
 	

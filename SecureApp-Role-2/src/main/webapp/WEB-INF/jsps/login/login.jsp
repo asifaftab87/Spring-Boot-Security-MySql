@@ -22,6 +22,8 @@
     <!-- Remind Passowrd -->
     <div id="formFooter">
       <a class="underlineHover" href="#">Forgot Password?</a>
+      <br />
+      <a class="text-primary" href="/registration">Sign Up</a>
     </div>
 
   </div>
