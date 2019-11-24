@@ -28,5 +28,9 @@
 	<definition name="registration" extends="loginLayout">
 		<put-attribute name="body" value="/WEB-INF/jsps/login/registration.jsp" />
 	</definition>
+	
+	<definition name="forgot-password" extends="loginLayout">
+		<put-attribute name="body" value="/WEB-INF/jsps/login/forgot-password.jsp" />
+	</definition>
 
 </tiles-definitions>

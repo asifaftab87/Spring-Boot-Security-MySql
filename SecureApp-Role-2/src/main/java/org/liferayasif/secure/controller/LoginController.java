@@ -2,6 +2,7 @@ package org.liferayasif.secure.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.liferayasif.secure.model.Role;
 import org.liferayasif.secure.model.User;
@@ -44,8 +45,14 @@ public class LoginController {
 		
 		ModelAndView mav = new ModelAndView("registration");
 		
-		Role role = new Role();
-		role.setRole("ROLE_USER");
+		User user2 = userService.findByEmail(user.getEmail());
+		
+		if(user2!=null) {
+			mav.addObject("userExists", true);
+			mav.setViewName("login");
+			return mav;
+		}
+		
         mav.addObject("user", user);
         userService.saveUser(user, "ROLE_USER");
         return mav;
@@ -71,6 +78,26 @@ public class LoginController {
         
 	}
 	
+	@GetMapping("/forgotPassword")
+	public ModelAndView forgotPassword() {
+		
+		ModelAndView mav = new ModelAndView("forgot-password");
+		
+		return mav;
+	}
 	
-	
+	@PostMapping("/forgotPassword")
+	public ModelAndView forgotPassword(@ModelAttribute User user, HttpServletRequest req, HttpServletResponse res, HttpSession session) {
+		
+		ModelAndView mav = new ModelAndView("change-password");
+		
+		User user2 = userService.findByEmail(user.getEmail());
+		
+		if(user2==null) {
+			mav.setViewName("change-password"); 
+			return mav;
+		}
+		session.setAttribute("email", value);
+		return mav;
+	}
 }
